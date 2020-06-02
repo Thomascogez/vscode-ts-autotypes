@@ -1,4 +1,5 @@
 # ts-autotypes
+![showcase](./assets/logo.png)
 
 ts-autotype is a vscode extension that will allow you automatically import every @types dependencies in your typescript project using npm or yarn
 

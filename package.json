@@ -2,6 +2,7 @@
     "name": "ts-autotypes",
     "displayName": "TS Autotypes",
     "description": "Extension that will allow you to install all your typescript type for a project",
+    "icon": "./logo.png",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.45.0"
@@ -15,8 +16,7 @@
     ],
     "main": "./out/extension.js",
     "contributes": {
-        "commands": [
-            {
+        "commands": [{
                 "command": "ts-autotypes.importTypesNpm",
                 "title": "Auto import types with npm"
             },
@@ -48,5 +48,10 @@
         "typescript": "^3.8.3",
         "vscode-test": "^1.3.0"
     },
-    "dependencies": {}
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Thomascogez/vscode-ts-autotypes"
+    },
+    "homepage": "https://github.com/Thomascogez/vscode-ts-autotypes/blob/master/README.md"
 }

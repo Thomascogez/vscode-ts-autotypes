@@ -5,7 +5,9 @@ export const fileExist = (path: string): Promise<any> => {
         try {
             if (existsSync(path)) {
                 resolve();
+                return;
             }
+            reject();
         } catch (err) {
             reject();
         }
