@@ -1,8 +1,9 @@
 {
     "name": "ts-autotypes",
-    "displayName": "TS Autotypes",
+    "displayName": "TS autotypes",
+    "publisher": "wedzyou",
     "description": "Extension that will allow you to install all your typescript type for a project",
-    "icon": "./logo.png",
+    "icon": "logo.png",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.45.0"
