@@ -45,11 +45,9 @@ export const importTypes = async (provider: provider) => {
         let ALL_DEPENDENCIES = PACKAGE.devDependencies ? {...PACKAGE.dependencies, ...PACKAGE.devDependencies} : PACKAGE.dependencies;
 
         for (let k in ALL_DEPENDENCIES) {
-            console.log(k);
             const TYPE = `@types/${k}`;
             if (await isTypeExist(k) && !isPackageAlreadyInstall(ALL_DEPENDENCIES, TYPE)) {
                 allTypes = [...allTypes, TYPE];
-                console.log(allTypes);
             };
         }
 
