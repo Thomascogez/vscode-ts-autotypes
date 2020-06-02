@@ -8,6 +8,7 @@ ts-autotype is a vscode extension that will allow you automatically import every
 In order to auto import your types search for the command "Auto import types with npm/yarn", then wait for installation.
 
 All dependencies and dev dependencies include in your **package.json** will be scan to see if a @types dependency exist and will install it. 
+
 ![showcase](./assets/showcase.gif)
 
 **Make sure that you have a package.json file at the root of your project**
