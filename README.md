@@ -17,7 +17,7 @@ All dependencies and dev dependencies include in your **package.json** will be s
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+
 
 ### 1.0.0
 
@@ -27,6 +27,10 @@ features:
 
 - Import types with **npm**
 - Import types with **yarn**
+
+### 1.0.1
+
+improve package reading time 
 
 -----------------------------------------------------------------------------------------------------------
 

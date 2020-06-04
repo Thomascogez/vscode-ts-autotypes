@@ -6,7 +6,7 @@ import { fileExist } from '../utils/fileExist';
 import { isPackageAlreadyInstall } from '../utils/isPackageAlreadyInstall';
 import { isTypeExist } from '../utils/isTypeExist';
 
-import { installDependencies} from './../helpers/installDependencies';
+import { installDependencies } from './../helpers/installDependencies';
 
 type provider = | "yarn" | "npm";
 
@@ -39,27 +39,29 @@ export const importTypes = async (provider: provider) => {
 
     if (PACKAGE.dependencies) {
         let allTypes: Array<string> = new Array();
-        
+
         window.showInformationMessage("Looking for types to install in your package.json");
 
-        let ALL_DEPENDENCIES = PACKAGE.devDependencies ? {...PACKAGE.dependencies, ...PACKAGE.devDependencies} : PACKAGE.dependencies;
+        let ALL_DEPENDENCIES = PACKAGE.devDependencies ? { ...PACKAGE.dependencies, ...PACKAGE.devDependencies } : PACKAGE.dependencies;
 
         for (let k in ALL_DEPENDENCIES) {
             const TYPE = `@types/${k}`;
-            if (await isTypeExist(k) && !isPackageAlreadyInstall(ALL_DEPENDENCIES, TYPE)) {
-                allTypes = [...allTypes, TYPE];
-            };
+            if (!isPackageAlreadyInstall(ALL_DEPENDENCIES, TYPE)) {
+                if (await isTypeExist(k)) {
+                    allTypes = [...allTypes, TYPE];
+                }
+            }
         }
 
         window.showInformationMessage(`Start installing dependencies with ${provider}`);
         try {
             provider === "npm" ?
                 await installDependencies(allTypes, "npm -D install") :
-                await installDependencies(allTypes,"yarn -D add");
+                await installDependencies(allTypes, "yarn -D add");
 
         } catch (error) {
             window.showWarningMessage("Error when installing package");
-            
+
         }
         window.showInformationMessage(`All types dependencies has been install`);
 
